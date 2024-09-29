@@ -1,0 +1,588 @@
+
+
+NOTES FROM CHAPTERS 2-4
+
+flexibility=extensibility
+
+ What is an hif file
+
+added an attributes //using amoeba's x and y (coordinates)
+
+the amoeba calls override the methods of the shape class
+
+when designing a class think about the objects
+
+the objects=KNOW example animals make sound();
+
+the object DOES example ex- eat();
+
+know- cart-contents button alarm
+
+does- add, remove, check out // color, label, depress, un-pressed// set time, get time, snooze,alarm-set
+
+object knows- instance variables //title, artist
+
+object does-methods set-title(); set-artist(); play();
+
+iv-tv size brand quality methods- produce sound, channels, show picture
+
+code class dog//
+
+teaser class dog test drive//
+
+each time an object is created in Java it goes into the heap
+
+all objects live on the heap
+
+class is like a recipe-big picture
+
+objects-methods would be like cookies
+
+class AC unit
+
+objects filter capacitor, ductwork
+
+variable are like cups holding something
+
+can only go up in data types
+
+byte can go into it but int can't go into the byte
+
+Be Careful Bear Shouldn't Ingest Large Furry Dogs
+
+boolean, char, byte, short, int, long, float, double
+
+
+use the thing before the. to get me the thing after the dot
+
+Declaration
+
+Dog myDog = newDog();
+
+1 declare a reference variable
+
+2 create an object
+
+3 link the object and reference
+
+Dog example
+
+knows name
+
+does bark();,eat();,Chase-cat();
+
+//code here
+
+Java is a pass-by-value
+
+that means passing by a copy
+
+classes define what an object knows and what it does
+
+know= instance variables
+
+does=methods
+
+all methods have parameters
+
+
+    ----------BREAK---------
+
+
+    CHAPTER 9 - LIFE AND DEATH OF AN OBJECT 9/28/2024 PAGE 235-271
+
+Methods are stacked
+
+The method at the top of the stack is always running
+
+the heap also known as the GC (Garbage Collector)- where all method and local variables go to live example go(); eat(); drink();
+
+the stack- Where All objects live, for example, duck people, students,
+
+Instance variables are variables declared inside a class but outside the method
+
+Local variables are variables declared inside a method or a parameter
+
+All local variables live on the stack, in the curly braces that relate to the method  where the variables
+
+Object reference variables work just like primitive variables
+
+if the reference is declared as a local variable then it goes on the stack
+
+All objects live in the heap, regardless of whether the reference is a local or instance variable
+
+Java makes space for the instance variables based on the primitive type.
+
+An int needs 32 bits, a long needs 64 bits, etc.
+
+Java doesn't care about the value it just cares about the data type
+
+So it knows how much memory that value is going to take up
+
+The three steps of object declaration and assignment: declare a reference variable, Duck myDuck
+
+create an object new Duck();
+
+and assign the object to the reference =
+
+in all, an object shows looks like this Duck myDuck= newDuck
+
+constructors- has the code that runs when you instantiate an object.
+
+in other words, the code that runs when you type new on a class type
+
+every class has a constructor known as the default constructor
+
+Constructors have no return type unlike methods
+
+A constructor runs before the object can be assigned to a reference
+
+As soon as you provide any kind of constructor the compiler backs off and gives ownership to the user
+
+if you have more than one constructor then the constructors MUST have different argument lists
+
+OVERLOADED constructors mean you have more than one constructor in the class
+
+To run, each constructor must have a different argument list
+
+Instance variables live within the object they belong, to on the heap
+
+If the instance variable is a reference to an object both the reference and the object it refers to are on the heap
+
+A constructor is code that runs when you say NEW on  class type
+
+A constructor must have the same name as the class, and must NOT have a return type
+
+You can use a constructor to initialize the state(i.e. the instance variables) of the object being constructed
+
+If you don't put a constructor in a class, the compiler will put in a default constructor
+
+The default constructor is always a no-args constructor
+
+If you put a constructor - any constructor - in a class the compiler will not build the default constructor
+
+If you want a no-arg constructor, and you've already put in a constructor with arguments, you'll have to build the constructor with no arguments yourself
+
+Always provide a no-arg constructor if you can, to make it easy for programmers to make a working object.
+
+Supply default values
+
+Overloaded constructors mean that you have more than one argument in the class
+
+Overloaded constructors must have different argument lists
+
+You cannot have two constructors with the same argument lists.
+
+An argument list includes the order and/or types of arguments
+
+Instance variables are assigned a default value, even when you don't assign one.
+
+The default values are 0/0.0/false for primitive, and null for references.
+
+All the constructors in an object's inheritance tree must run when you make a new object
+
+This means that every superclass has a constructor and each constructor up the hierarchy runs at the time an object of a subclass is created
+
+NEW starts a constructor chain reaction and even abstract classes have a constructor
+
+Can't say NEW in an abstract class
+
+For an object to be fully formed all the superclass parts of itself must be fully formed and that's why the super constructor must run
+
+When a constructor runs it immediately calls its superclass constructor up the chain until you get to the class Object constructor
+
+Ever constructor can have a call to super(); or this (); but never both
+
+The only right way to call a super constructor is by calling super();
+
+Calling super(); puts that constructor at the top of the stack
+
+an object's life depends on the life of the references it refers to
+
+if the reference is alive the object is on the heap
+
+
+The difference between life and scope is
+
+life- a local variable is alive as long as its Stack frame is on the Stack until the method completes
+
+Scope-A local variable is in the scope only within the method in which the variable was declared
+
+When its own method calls another, the variable is alive but not in scope until its method resumes
+
+You can only use a Variable only when it's in scope
+
+An object's life has no meaning unless somebody references it
+
+If you can't get to it you can't ask it to do anything and it's just a waste of bits
+
+But if an object is unreachable the GC will find out and throw it away
+
+3 ways to get rid of an object's reference:
+
+the reference goes out of scope, permanently
+
+the reference is assigned to another object
+
+the reference is explicitly set to null
+
+
+----------Break----------
+
+Plural site notes chapters 7-10
+
+Chapter 7 WORKING WITH STRINGS
+
+String Class
+
+literals are enclosed in double quotes
+
+values can be concatenated using += or +
+
+String Equality
+
+comparing String with equality operator =
+
+checks to see if both strings reference the same string instance
+
+comparing strings with the equals method
+
+performing a character-by-character comparison
+
+Checking String equality
+
+the equals method is the best choice in most cases
+
+String
+
+Sequence of Unicode characters
+
+String variables
+
+Do not store String instance
+
+Hold a reference to a String instance
+
+String are immutable changes in the value create a new String instance
+
+String equality
+
+Prefers the equals method
+
+String interning
+
+Provides a Canonicalised  valve
+
+enables reliable use of = operator
+
+improve performance of frequently compared strings
+
+String Builder
+
+provides mutable String buffer
+
+efficiently constructs String values
+
+use to sting to extract String context
+
+\n in whitespace or " "
+
+
+CHAPTER 8 UNDERSTANDING CLASSES AND OBJECTS
+
+Java is object-oriented
+
+objects encapsulated data, operations, and usage semantics
+
+Allow Storage and manipulation details to be hidden
+
+separates what is to be done from how it is done
+
+A Class is a template for creating objects
+
+declared with the class keyword followed by the class name
+
+body of the class is contained within brackets
+
+java source file name normally has the same name as the class
+
+Classes- a class is made up of both state and executable code fields that store the object state
+
+Methods-executable code that manipulates state and performs operations
+
+Constructors- executable code used during object creation to set the initial state
+
+Using Classes - use the new keyword to create a class instance (a.k.a an object)
+
+Allocates the memory described by the class, and runs the constructor
+
+Returns a reference to the allocated memory
+
+
+Encapsulation and Access Modifiers- the implementation of a class generally hidden
+
+the concept is known as encapsulation- java uses access modifiers to achieve Encapsulation
+
+Basic access Modifiers
+
+No access modifier- only within its package (a.k.a package private)-usable on classes and members
+
+Public access modifier-Everywhere-usable on classes and members
+
+Private access modifier- only within the declaring class -is not usable on classes(unless it's a nested class)But is on members
+
+
+Special References
+
+THIS. implicit reference to an object
+
+Useful for reducing variable confusion
+
+Allows an object to pass itself as a parameter
+
+NULL- can be assigned to any reference variable
+
+Field Encapsulation
+
+the specific fields a class uses to manage data values is generally considered to be an implementation detail
+
+in most cases, these details should not be directly accessible outside the class
+
+use methods to control field access
+
+
+Accessors and Mutators- use the accessor/mutator pattern to control field access
+
+Accessor/getter- retrieves field value methodName: getFieldName
+
+Mutator modifies field value
+
+Summary-
+
+Class-Template for creating objects
+
+Object-Instance of a class
+
+CLASSES ARE REFERENCE TYPES
+
+class variables simply hold a reference
+
+instances created with a new keyword
+
+multiple variables can reference the same instance
+
+
+Fields- store object state
+
+Methods- Executable code, Manipulate state, perform operations
+
+Constructors- Executable code, runs during object creation, sets initial state
+
+CHAPTER 9 IMPLEMENTING CLASS CONSTRUCTORS AND INITIALIZERS
+
+Class Initial state- when an object is created, it is expected to be in a useful state
+
+Default initial state set by Java often not enough
+
+may need specific action
+
+Default state of fields
+
+byte, short, int,long-0
+
+float or double-0.0
+
+char '\u0000'
+
+boolean - false
+
+reference types - null
+
+Establishing Initial State The ways to establish initial state
+
+field initializers, constructors, Initialization blocks
+
+Field initializers- specify the field's initial valve as part of the field declaration
+
+- can be an equation
+
+- can include other fields
+
+- can include methods calls
+
+CONSTRUCTORS
+
+code that runs during object creation
+
+named same as the class
+
+no return type
+
+NUMBER OF CONSTRUCTORS
+
+when no explicit constructor, Java provides one
+
+Can have  multiple Constructors
+
+Each must have a unique parameter list
+
+different parameter types
+
+Chaining constructors
+
+one constructor can call another
+
+
+must be on the first line of the constructor
+
+
+Use this keyword followed by the parameter list
+
+Constructor Visibly
+
+constructors can be non-public
+
+limits which code can perform specific types of instance creation
+
+Share code across all constructors
+
+cannot receive parameters
+
+place code within brackets outside of any method or constructor
+
+A Class can have multiple
+
+Always execute
+
+execute in order starting at the top of the source file
+
+INITIALIZATION AND CONSTRUCTION ORDER
+
+Field initializers
+
+Initialization block
+
+Constructors
+
+SUMMARY
+
+Object initial state
+
+Initial state expected to be useful
+
+Java provides default field values
+
+Field initializers
+
+Set initial value as part of declaration
+
+Can include an equation, other fields,and method calls
+
+Constructors
+
+Code that runs during object creation
+
+accept zero or more parameters
+
+can have multiple
+
+One constructor can call another
+
+Call must be the first line of constructor
+
+can pass parameters
+
+Constructor can be non-public
+
+Limits which code can perform specific types of instance creation
+
+
+Initialization blocks
+
+Code that rus during object creation
+
+Not tied to any specific constructor
+
+Cannot receive parameters
+
+-----CHAPTER 10 USES STATIC MEMBERS----- 9/29/2014
+
+Static members are shared class wide
+
+-Not associated with individual instance
+
+Declared using the static keyword
+
+Accessible using the class name
+
+Static members -
+
+Field
+
+A value not associated with a specific instance
+
+All instances access the same value
+
+Methods- Performs an action not tied to a specific instance
+
+Methods- has access to static members only
+
+Static Import statement
+
+Import statement- allows a type name to be used without being package-qualified
+
+Static import statement
+
+used with static methods
+
+Allows method named to be used without being class-qualified
+
+Static Initialization Blocks
+
+Perform one-time type initialization
+
+-Executes before type's first use
+
+-Has access to static members only
+
+Statements enclosed in brackets
+
+-Preceded by static keyword
+
+-Outside of any method or constructor
+
+--- Summary --
+
+Static fields
+
+- Values not associated with an instance
+
+-All instances access the same value
+
+Static method
+
+-performing actions not tied to an instance
+
+-can only access static members
+
+Static import statement
+
+-Allows static method to be used without being class-qualified
+
+Static initialization blocks
+
+- Perform one-time type initialization
+
+- Execute before type's first use
+
+
+
+
+
+
+
+
+
+
+
+
