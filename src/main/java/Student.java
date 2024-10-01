@@ -40,7 +40,35 @@ public class Student {
         return testScore.length;
     }
 
+    public void addExamScore(double examScore) {
+        ArrayList<Double> arrayList = new ArrayList<>(Arrays.asList(testScore));
+        // converts test scores into an array list
 
+        arrayList.add(examScore);
+
+        // add exam scores to the list
+
+        testScore = arrayList.toArray(testScore);
+
+        // then convert test scores back to an array
+
+    }
+
+    public void setExamScore(int examNumber, double newScore) {
+        int index = examNumber - 1;
+        // because index starts at 0 we -1
+        // examNumber = current index
+
+        if (index >= 0 && index < testScore.length) {
+            testScore[index] = newScore;
+            // testscore with index of exam number
+
+            // set the current test score index = to new score
+
+        } else {
+            System.out.println("Invalid exam number");
+        }
+    }
 
     public String getExamScores() {
         String container = "";

@@ -72,16 +72,16 @@ public class Classroom {
     public void getGradeBook() { // last question making a grading scale for students
         for (Student student : students) {
             if (student.getAverageExamScore() >= 90) {
-                System.out.println("You got an A and you are in the upper 10th percentile.");
+                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + "You got an A and you are in the upper 10th percentile.");
             } else if (student.getAverageExamScore() <= 89 && student.getAverageExamScore() > 80) {
-                System.out.println("You got a B and you are in the 11th - 29th  percentile.");
+                System.out.println(student.getFirstName() + " " + student.getLastName() + " " +"You got a B and you are in the 11th - 29th  percentile.");
             } else if (student.getAverageExamScore() <= 79 && student.getAverageExamScore() > 69) {
-                System.out.println("You got a C and you are in the 30th to 50th percentile");
+                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + "You got a C and you are in the 30th to 50th percentile");
                 // block of code to be executed if the condition1 is false and condition2 is true
             } else if (student.getAverageExamScore() <= 69 && student.getAverageExamScore() > 59) {
-                System.out.println("You got a D and you are in the lower 51st to 89th");
+                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + "You got a D and you are in the lower 51st to 89th");
             } else if (student.getAverageExamScore() <= 59 && student.getAverageExamScore() > 0) {
-                System.out.println("You got a F and you are in the lower 11th percentile");
+                System.out.println(student.getFirstName() + " " + student.getLastName() + " " + "You got a F and you are in the lower 11th percentile");
             }
         }
     }
